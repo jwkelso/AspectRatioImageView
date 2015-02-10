@@ -67,7 +67,7 @@ public class SampleAdapter extends BaseAdapter {
                 view = LayoutInflater.from(mContext).inflate(R.layout.item_standard, parent, false);
                 break;
             case VIEW_TYPE_DEFAULT_SIZE:
-                view = LayoutInflater.from(mContext).inflate(R.layout.item_default_size, parent,
+                view = LayoutInflater.from(mContext).inflate(R.layout.item_aspect_ratio, parent,
                         false);
                 break;
         }

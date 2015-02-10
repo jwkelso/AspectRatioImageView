@@ -48,32 +48,33 @@ import android.widget.ImageView;
  * Since the values are only known after the layout occurs, jank can still occur because of updating
  * the layout.
  *
- * The {@link DefaultSizeImageView} eliminates the jank. It requires that the desired aspect ratio
+ * The {@link AspectRatioImageView} eliminates the jank. It requires that the desired aspect ratio
  * or the height and width of the original image to be set before measurement occurs. It will
  * calculate an aspect ratio and update the measured dimension of the view to match what it will be
  * when the image load is complete.
  */
 
-public class DefaultSizeImageView extends ImageView {
+public class AspectRatioImageView extends ImageView {
     // Aspect ratio is width / height
     protected float mAspectRatio;
 
-    public DefaultSizeImageView(Context context) {
+    public AspectRatioImageView(Context context) {
         super(context);
     }
 
-    public DefaultSizeImageView(Context context, AttributeSet attrs) {
+    public AspectRatioImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
         resolveAttrs(attrs, 0, 0);
     }
 
-    public DefaultSizeImageView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public AspectRatioImageView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         resolveAttrs(attrs, defStyleAttr, 0);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public DefaultSizeImageView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public AspectRatioImageView(Context context, AttributeSet attrs, int defStyleAttr,
+                                int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         resolveAttrs(attrs, defStyleAttr, defStyleRes);
     }
@@ -81,21 +82,22 @@ public class DefaultSizeImageView extends ImageView {
     private void resolveAttrs(AttributeSet attrs, int defStyle, int defStyleRes) {
         //Retrieve styles attributes
         TypedArray a = getContext().obtainStyledAttributes(attrs,
-                R.styleable.com_jameskelso_android_widget_DefaultSizeImageView,
+                R.styleable.com_jameskelso_android_widget_AspectRatioImageView,
                 defStyle, defStyleRes);
 
         int originalWidth = a.getDimensionPixelSize(
-                R.styleable.com_jameskelso_android_widget_DefaultSizeImageView_originalImageWidth,
+                R.styleable.com_jameskelso_android_widget_AspectRatioImageView_originalImageWidth,
                 0);
         int originalHeight = a.getDimensionPixelSize(
-                R.styleable.com_jameskelso_android_widget_DefaultSizeImageView_originalImageHeight,
+                R.styleable.com_jameskelso_android_widget_AspectRatioImageView_originalImageHeight,
                 0);
 
         if (originalWidth > 0 && originalHeight > 0) {
             calculateAspectRatio(originalWidth, originalHeight);
         }
 
-        float aspectRatio = a.getFloat(R.styleable.com_jameskelso_android_widget_DefaultSizeImageView_aspectRatio,
+        float aspectRatio = a.getFloat(
+                R.styleable.com_jameskelso_android_widget_AspectRatioImageView_aspectRatio,
                 0);
         if (aspectRatio > 0) {
             this.mAspectRatio = aspectRatio;
