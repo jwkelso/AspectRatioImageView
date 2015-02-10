@@ -14,7 +14,7 @@ That's a lot to take in. Here's an image of what it does. The top cell is the As
 
 ##Usage
 <pre>repositories {
-    maven { url "https://github.com/jwkelso/AspectRatioImageView/raw/master/maven/aspect-ratio-imageview/" }
+    maven { url "https://github.com/jwkelso/android-maven/raw/master/" }
 }
 
 dependencies {

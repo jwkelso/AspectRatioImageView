@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 repositories {
     jcenter()
-    maven { url "https://github.com/jwkelso/AspectRatioImageView/raw/master/maven/aspect-ratio-imageview/" }
+    maven { url "https://github.com/jwkelso/android-maven/raw/master/" }
 }
 
 android {
