@@ -13,4 +13,11 @@ That's a lot to take in. Here's an image of what it does. The top cell is the As
 ![alt text](loading.gif?raw=true  "Demonstration Image")
 
 ##Usage
-I'm hoping to eventually get this added to a Maven repo so that it is compatible with Gradle. Until then, you'll have to include it as a module in your project the old fashioned way. The module that contains the widget is the library module. There is a test module that contains a unit test covering the functionality in this widget. There's also a sample module that contains an Android application that will demonstrate the same thing shown in the GIF above.
+<pre>repositories {
+    maven { url "https://github.com/jwkelso/AspectRatioImageView/raw/master/maven/aspect-ratio-imageview/" }
+}
+
+dependencies {
+    compile 'com.jameskelso:aspect-ratio-imageview:1.1.0'
+}
+</pre>
