@@ -1,0 +1,22 @@
+# Mac files
+.DS_Store
+
+# Build files
+bin
+gen
+*.keystore
+*.apk
+
+# Settings
+proguard
+tmp
+appcompat
+
+# Gradle
+.gradle
+build
+
+# Android Studio
+.idea
+*.iml
+local.properties
