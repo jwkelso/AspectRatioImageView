@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.jameskelso.android.widget.DefaultSizeImageView
+<com.jameskelso.android.widget.AspectRatioImageView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
@@ -9,4 +9,4 @@
     app:originalImageHeight="9px"
     app:aspectRatio="1">
 
-</com.jameskelso.android.widget.DefaultSizeImageView>
+</com.jameskelso.android.widget.AspectRatioImageView>

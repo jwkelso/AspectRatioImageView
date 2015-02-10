@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:padding="12dp">
 
-    <com.jameskelso.android.widget.DefaultSizeImageView
+    <com.jameskelso.android.widget.AspectRatioImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,6 +23,6 @@
         android:layout_below="@id/imageView"
         android:textColor="@android:color/white"
         android:textSize="14sp"
-        android:text="This uses the DefaultSizeImageView. Note how this cell remains its current size when loaded."/>
+        android:text="This uses the AspectRatioImageView. Note how this cell remains its current size when loaded."/>
 
 </RelativeLayout>

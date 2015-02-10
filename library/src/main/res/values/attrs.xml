@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="com.jameskelso.android.widget.DefaultSizeImageView">
+    <declare-styleable name="com.jameskelso.android.widget.AspectRatioImageView">
         <!-- Aspect ratio of the image that will be loaded into the ImageView (width / height) -->
         <attr name="aspectRatio" format="float"/>
         <!-- Width of the image that will be loaded into the ImageView before resizing -->

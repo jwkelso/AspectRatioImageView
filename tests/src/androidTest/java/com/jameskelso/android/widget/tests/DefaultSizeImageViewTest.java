@@ -4,7 +4,7 @@ import android.test.AndroidTestCase;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.jameskelso.android.widget.DefaultSizeImageView;
+import com.jameskelso.android.widget.AspectRatioImageView;
 
 /**
  * Created by jkelso on 1/15/15.
@@ -29,7 +29,7 @@ public class DefaultSizeImageViewTest extends AndroidTestCase {
     }
 
     public void testAttrsOriginalHeightOnly() {
-        DefaultSizeImageView imageView = (DefaultSizeImageView)
+        AspectRatioImageView imageView = (AspectRatioImageView)
                 LayoutInflater.from(getContext()).inflate(R.layout.height_only, null,
                         false);
         assertNotNull(imageView);
@@ -37,7 +37,7 @@ public class DefaultSizeImageViewTest extends AndroidTestCase {
     }
 
     public void testAttrsOriginalWidthOnly() {
-        DefaultSizeImageView imageView = (DefaultSizeImageView)
+        AspectRatioImageView imageView = (AspectRatioImageView)
                 LayoutInflater.from(getContext()).inflate(R.layout.width_only, null,
                         false);
         assertNotNull(imageView);
@@ -45,7 +45,7 @@ public class DefaultSizeImageViewTest extends AndroidTestCase {
     }
 
     public void testAttrsOriginalHeightAndWidthOnly() {
-        DefaultSizeImageView imageView = (DefaultSizeImageView)
+        AspectRatioImageView imageView = (AspectRatioImageView)
                 LayoutInflater.from(getContext()).inflate(R.layout.width_and_height_only, null,
                         false);
         assertNotNull(imageView);
@@ -53,7 +53,7 @@ public class DefaultSizeImageViewTest extends AndroidTestCase {
     }
 
     public void testAttrsAspectRatioOnly() {
-        DefaultSizeImageView imageView = (DefaultSizeImageView)
+        AspectRatioImageView imageView = (AspectRatioImageView)
                 LayoutInflater.from(getContext()).inflate(R.layout.aspect_only, null,
                         false);
         assertNotNull(imageView);
@@ -61,7 +61,7 @@ public class DefaultSizeImageViewTest extends AndroidTestCase {
     }
 
     public void testAttrsHeightAndAspectRatioOnly() {
-        DefaultSizeImageView imageView = (DefaultSizeImageView)
+        AspectRatioImageView imageView = (AspectRatioImageView)
                 LayoutInflater.from(getContext()).inflate(R.layout.height_and_aspect, null,
                         false);
         assertNotNull(imageView);
@@ -69,7 +69,7 @@ public class DefaultSizeImageViewTest extends AndroidTestCase {
     }
 
     public void testAttrsWidthAndAspectRatioOnly() {
-        DefaultSizeImageView imageView = (DefaultSizeImageView)
+        AspectRatioImageView imageView = (AspectRatioImageView)
                 LayoutInflater.from(getContext()).inflate(R.layout.width_and_aspect, null,
                         false);
         assertNotNull(imageView);
@@ -77,7 +77,7 @@ public class DefaultSizeImageViewTest extends AndroidTestCase {
     }
 
     public void testAttrsWidthHeightAndAspectRatio() {
-        DefaultSizeImageView imageView = (DefaultSizeImageView)
+        AspectRatioImageView imageView = (AspectRatioImageView)
                 LayoutInflater.from(getContext()).inflate(R.layout.width_height_and_aspect, null,
                         false);
         assertNotNull(imageView);
@@ -85,7 +85,7 @@ public class DefaultSizeImageViewTest extends AndroidTestCase {
     }
 
     public void testSetOriginalWidthAndHeight() {
-        DefaultSizeImageView imageView = new DefaultSizeImageView(getContext());
+        AspectRatioImageView imageView = new AspectRatioImageView(getContext());
         assertEquals(0f, imageView.getAspectRatio());
 
         imageView.setOriginalImageWidthAndHeight(16, 9);
@@ -93,7 +93,7 @@ public class DefaultSizeImageViewTest extends AndroidTestCase {
     }
 
     public void testSetAspectRatio() {
-        DefaultSizeImageView imageView = new DefaultSizeImageView(getContext());
+        AspectRatioImageView imageView = new AspectRatioImageView(getContext());
         assertEquals(0f, imageView.getAspectRatio());
 
         imageView.setAspectRatio(ASPECT_RATIO_2);
@@ -101,7 +101,7 @@ public class DefaultSizeImageViewTest extends AndroidTestCase {
     }
 
     public void testOnMeasureNoAspectRatioWidth() {
-        DefaultSizeImageView imageView = new DefaultSizeImageView(getContext());
+        AspectRatioImageView imageView = new AspectRatioImageView(getContext());
         assertEquals(imageView.getMeasuredWidth(), 0);
         assertEquals(imageView.getMeasuredHeight(), 0);
 
@@ -112,7 +112,7 @@ public class DefaultSizeImageViewTest extends AndroidTestCase {
     }
 
     public void testOnMeasureNoAspectRatioHeight() {
-        DefaultSizeImageView imageView = new DefaultSizeImageView(getContext());
+        AspectRatioImageView imageView = new AspectRatioImageView(getContext());
         assertEquals(imageView.getMeasuredWidth(), 0);
         assertEquals(imageView.getMeasuredHeight(), 0);
 
@@ -123,7 +123,7 @@ public class DefaultSizeImageViewTest extends AndroidTestCase {
     }
 
     public void testOnMeasureWidthWithAspectRatio() {
-        DefaultSizeImageView imageView = new DefaultSizeImageView(getContext());
+        AspectRatioImageView imageView = new AspectRatioImageView(getContext());
         imageView.setAspectRatio(ASPECT_RATIO_1);
         assertEquals(imageView.getMeasuredWidth(), 0);
         assertEquals(imageView.getMeasuredHeight(), 0);
@@ -135,7 +135,7 @@ public class DefaultSizeImageViewTest extends AndroidTestCase {
     }
 
     public void testOnMeasureHeightWithAspectRatio() {
-        DefaultSizeImageView imageView = new DefaultSizeImageView(getContext());
+        AspectRatioImageView imageView = new AspectRatioImageView(getContext());
         imageView.setAspectRatio(ASPECT_RATIO_1);
         assertEquals(imageView.getMeasuredWidth(), 0);
         assertEquals(imageView.getMeasuredHeight(), 0);
@@ -147,7 +147,7 @@ public class DefaultSizeImageViewTest extends AndroidTestCase {
     }
 
     public void testOnMeasureWidthAndHeightWithAspectRatio() {
-        DefaultSizeImageView imageView = new DefaultSizeImageView(getContext());
+        AspectRatioImageView imageView = new AspectRatioImageView(getContext());
         imageView.setAspectRatio(ASPECT_RATIO_1);
         assertEquals(imageView.getMeasuredWidth(), 0);
         assertEquals(imageView.getMeasuredHeight(), 0);
@@ -162,7 +162,7 @@ public class DefaultSizeImageViewTest extends AndroidTestCase {
     }
 
     public void testOnMeasureWidthAndHeightAtMostWithAspectRatio() {
-        DefaultSizeImageView imageView = new DefaultSizeImageView(getContext());
+        AspectRatioImageView imageView = new AspectRatioImageView(getContext());
         imageView.setAspectRatio(ASPECT_RATIO_1);
         assertEquals(imageView.getMeasuredWidth(), 0);
         assertEquals(imageView.getMeasuredHeight(), 0);
@@ -180,7 +180,7 @@ public class DefaultSizeImageViewTest extends AndroidTestCase {
     }
 
     public void testOnMeasureWidthAndHeightAtMostLimitedWithAspectRatio() {
-        DefaultSizeImageView imageView = new DefaultSizeImageView(getContext());
+        AspectRatioImageView imageView = new AspectRatioImageView(getContext());
         imageView.setAspectRatio(ASPECT_RATIO_1);
         assertEquals(imageView.getMeasuredWidth(), 0);
         assertEquals(imageView.getMeasuredHeight(), 0);
@@ -198,7 +198,7 @@ public class DefaultSizeImageViewTest extends AndroidTestCase {
     }
 
     public void testOnMeasureWidthAtMostLimitedAndHeightWithAspectRatio() {
-        DefaultSizeImageView imageView = new DefaultSizeImageView(getContext());
+        AspectRatioImageView imageView = new AspectRatioImageView(getContext());
         imageView.setAspectRatio(ASPECT_RATIO_1);
         assertEquals(imageView.getMeasuredWidth(), 0);
         assertEquals(imageView.getMeasuredHeight(), 0);
