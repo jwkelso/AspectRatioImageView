@@ -21,3 +21,11 @@ dependencies {
     compile 'com.jameskelso:aspect-ratio-imageview:1.1.0'
 }
 </pre>
+
+```
+<com.jameskelso.android.widget.AspectRatioImageView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:originalImageWidth="3415px"
+    app:originalImageHeight="2268px"/>
+```
