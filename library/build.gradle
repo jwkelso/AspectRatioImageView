@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 10
         targetSdkVersion 21
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName getProperty('versionName')
     }
     buildTypes {
         release {
@@ -21,6 +21,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.0.3'
 }
 
 uploadArchives {
@@ -30,7 +31,7 @@ uploadArchives {
         pom.project {
             groupId 'com.jameskelso'
             artifactId 'aspect-ratio-imageview'
-            version "1.1.0"
+            version getProperty('versionName')
         }
     }
 }
